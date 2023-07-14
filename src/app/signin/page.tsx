@@ -1,5 +1,5 @@
-import OAuthButtons from "@/components/OAuthButtons";
-import SignInForm from "@/components/SignInForm";
+import OAuthButtons from "@/components/SignIn/OAuthButtons";
+import SignInForm from "@/components/SignIn/SignInForm";
 import { getServerSession } from "next-auth";
 import Link from "next/link";
 import { redirect } from "next/navigation";
