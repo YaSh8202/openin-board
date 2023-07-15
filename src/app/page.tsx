@@ -8,7 +8,9 @@ import { ActivitiesData } from "@/types";
 
 
 const getActivitiesData = async () => {
-  const res = await fetch("http://localhost:3000/api/activities");
+  const res = await fetch(
+    `${process.env.NEXTAUTH_URL}/api/activities}`
+  );
   const data = await res.json();
   return data as ActivitiesData;
 };
