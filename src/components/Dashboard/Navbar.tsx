@@ -2,6 +2,7 @@ import React from "react";
 import { BellIcon, SearchIcon } from "../Icons";
 import Image from "next/image";
 import { getServerSession } from "next-auth";
+import Avatar from "./Avatar";
 
 async function Navbar() {
   const session = await getServerSession();
@@ -24,13 +25,7 @@ async function Navbar() {
           <SearchIcon className="text-secondary w-4 h-4" />
         </label>
         <BellIcon className="text-black text-lg mr-[30px]" />
-        <Image
-          width={32}
-          height={32}
-          className="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-gray-800"
-          src={session?.user?.image as string}
-          alt="Image Description"
-        />
+        <Avatar />
       </div>
     </nav>
   );
