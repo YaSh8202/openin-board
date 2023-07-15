@@ -7,7 +7,7 @@ import TopProducts from "@/components/Dashboard/TopProducts";
 import { ActivitiesData } from "@/types";
 
 const getActivitiesData = async () => {
-  const url = `https://${process.env.VERCEL_URL}/api/activities`;
+  const url = `https://${process.env.VERCEL_URL as string}/api/activities`;
   const res = await fetch(url);
   const data = await res.json();
   return data as ActivitiesData;
