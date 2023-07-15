@@ -6,11 +6,9 @@ import StatsCards from "@/components/Dashboard/StatsCards";
 import TopProducts from "@/components/Dashboard/TopProducts";
 import { ActivitiesData } from "@/types";
 
-
 const getActivitiesData = async () => {
-  const res = await fetch(
-    `${process.env.NEXTAUTH_URL}/api/activities}`
-  );
+  const url = `${process.env.NEXTAUTH_URL}/api/activities`;
+  const res = await fetch(url);
   const data = await res.json();
   return data as ActivitiesData;
 };

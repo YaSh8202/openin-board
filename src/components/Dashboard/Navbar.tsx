@@ -27,7 +27,7 @@ async function Navbar() {
         <Image
           width={32}
           height={32}
-          className="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-gray-800"
+          className="inline-block h-8 w-8 rounded-full"
           src={session?.user?.image as string}
           alt="Image Description"
         />
