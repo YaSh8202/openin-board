@@ -1,7 +1,9 @@
 import Activities from "@/components/Dashboard/Activities";
 import Navbar from "@/components/Dashboard/Navbar";
+import Schedule from "@/components/Dashboard/Schedule";
 import Sidebar from "@/components/Dashboard/Sidebar";
 import StatsCards from "@/components/Dashboard/StatsCards";
+import TopProducts from "@/components/Dashboard/TopProducts";
 import Image from "next/image";
 
 export default function Home() {
@@ -13,8 +15,8 @@ export default function Home() {
         <StatsCards />
         <Activities />
         <div className="flex flex-row gap-10">
-          {/* <TopProducts /> */}
-          {/* <Schedule /> */}
+          <TopProducts />
+          <Schedule />
         </div>
       </div>
     </main>
