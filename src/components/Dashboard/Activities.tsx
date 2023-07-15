@@ -1,5 +1,6 @@
 "use client";
 
+import { ActivitiesData } from "@/types";
 import { type ApexOptions } from "apexcharts";
 import React, { useState } from "react";
 import ReactApexChart from "react-apexcharts";
@@ -45,34 +46,11 @@ const options = {
   },
 } satisfies ApexOptions;
 
-const months = [
-  "Jan - Feb 2023",
-  "Feb - Mar 2023",
-  "March - April 2023",
-  "Apr - May 2023",
-  "May - June 2023",
-  "June - July 2023",
-];
-
-const user_activities = [
-  [356, 198, 474, 279],
-  [186, 462, 305, 136],
-  [231, 412, 154, 488],
-  [390, 129, 349, 274],
-  [198, 456, 207, 410],
-  [170, 496, 207, 489],
-];
-
-const guest_activities = [
-  [270, 385, 131, 410],
-  [349, 170, 496, 207],
-  [489, 109, 421, 154],
-  [488, 233, 456, 189],
-  [270, 186, 389, 146],
-  [462, 305, 136, 207],
-];
-
-function Activities() {
+function Activities({
+  data: { guest_activities, months, user_activities },
+}: {
+  data: ActivitiesData;
+}) {
   const [series, setSeries] = useState([
     {
       name: "Guest",
@@ -84,8 +62,6 @@ function Activities() {
     },
   ]);
 
-  const [month, setMonth] = useState(0);
-
   return (
     <section className="bg-white py-[30px] px-10  rounded-[20px] ">
       <div className="flex items-center justify-between">
@@ -95,7 +71,6 @@ function Activities() {
             onChange={(e) => {
               const month = e.target.value;
               const index = months.indexOf(month);
-              setMonth(index);
               setSeries([
                 {
                   name: "Guest",
